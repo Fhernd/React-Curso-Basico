@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div>
+      <form onSubmit={calcularSuma}>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Ingrese primer valor: 
+          <input type="number" name="valor1" />
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p>
+          Ingrese segundo valor: 
+          <input type="number" name="valor2" />
+        </p>
+        <p>
+          <input type="submit" value="Sumar" />
+        </p>
+      </form>
     </div>
   );
+}
+
+function calcularSuma(event) {
+  event.preventDefault();
+
+  const valor1 = parseInt(event.target.valor1.value, 10);
+  const valor2 = parseInt(event.target.valor2.value, 10);
+
+  const suma = valor1 + valor2;
+
+  alert('La suma es: ' + suma);
 }
 
 export default App;
