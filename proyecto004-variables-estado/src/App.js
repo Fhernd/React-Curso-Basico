@@ -2,17 +2,22 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [numero, setNumero] = useState(0);
+  const [numerosAleatorios, setNumeros] = useState([0, 0, 0, 0, 0]);
 
-  function generarEnteroAleatorio() {
-    const enteroAleatorio = Math.trunc(Math.random() * 10);
-    setNumero(enteroAleatorio);
+  function generarEnterosAleatorios() {
+    const numeros = new Array(5);
+    for (let i = 0; i < numeros.length; i++) {
+      numeros[i] = Math.trunc(Math.random() * 10);
+    }
+    setNumeros(numeros);
   }
 
   return (
     <div>
-      <p>Número aleatorio: {numero}</p>
-      <button onClick={generarEnteroAleatorio}>Genenerar entero aleatorio</button>    </div>
+      <p>Números aleatorios:</p>
+      {numerosAleatorios.map(n => (<p>{n}</p>))}
+      <button onClick={generarEnterosAleatorios}>Generar números aleatorios</button>
+    </div>
   );
 }
 
