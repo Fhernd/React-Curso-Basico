@@ -5,3 +5,5 @@ function Dado(propiedades) {
         <div className="dado-cuadrado">{propiedades.valor}</div>
     );
 }
+
+export default Dado;
