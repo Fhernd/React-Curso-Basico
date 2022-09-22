@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+
 import './App.css';
 
 function App() {
+  function eliminarUltimafila() {
+    if (articulos.length) {
+      const temporal = Array.from(articulos);
+      temporal.pop();
+      setArticulos(temporal);
+    }
+  }
+
+  const [articulos, setArticulos] = useState([
+    {
+      codigo: 1,
+      descripcion: 'papas',
+      precio: 12.52
+    },
+    {
+      codigo: 2,
+      descripcion: 'naranjas',
+      precio: 21
+    },
+    {
+      codigo: 3,
+      descripcion: 'peras',
+      precio: 18.20
+    }
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
   );
 }
 
