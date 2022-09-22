@@ -1,25 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
 
+import {useState} from 'react';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [operaciones, setOperacion] = useState([]);
+
+  function sumar(event) {
+    event.preventDefault();
+
+    const valor1 = parseInt(event.target.valor1.value);
+    const valor2 = parseInt(event.target.valor2.value);
+
+    const suma = valor1 + valor2;
+
+    const resultado = {
+      valor1, valor2, resultado: suma
+    }
+
+    setOperacion([resultado, ...operaciones]);
+
+    event.target.valor1.value = '';
+    event.target.valor2.value = '';
+  }
+
+  return ();
 }
 
 export default App;
