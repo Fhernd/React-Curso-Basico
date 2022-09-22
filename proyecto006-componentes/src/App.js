@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+import Dado from './Dado'
+
 import './App.css';
 
 function App() {
+  const valor1 = Math.trunc(Math.random() * 6) + 1;
+  const valor2 = Math.trunc(Math.random() * 6) + 1;
+  const valor3 = Math.trunc(Math.random() * 6) + 1;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Dado valor={valor1}/>
+      <Dado valor={valor2}/>
+      <Dado valor={valor3}/>
     </div>
   );
 }
