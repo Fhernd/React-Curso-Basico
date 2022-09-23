@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+import {useState, useEffect} from 'react';
 import './App.css';
 
 function App() {
+  const [articulos, setArticulos] = useState([]);
+
+  useEffect(() => {
+    fetch('https://scratchya.com.ar/react/datos.php')
+    .then((response) => {return response.json()})
+    .then((articulos) => {setArticulos(articulos)})
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+          {articulos.map(e => {
+            return (
+              <tr key={e.codigo}>
+                <td>{e.codigo}</td>
+                <td>{e.descripcion}</td>
+                <td>{e.precio}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }
