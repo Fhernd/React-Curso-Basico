@@ -9,7 +9,7 @@ function CoordenadaFlecha() {
             window.removeEventListener('mousemove', fijarPosicion);
             console.log('Se borró el registro de eventos.');
         };
-    });
+    }, []);
 
     function fijarPosicion(event) {
         setPosicion({x: event.clientX, y: event.clientY});
