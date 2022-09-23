@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function CoordenaFlecha() {
+function CoordenadaFlecha() {
     const [posicion, setPosicion] = useState({x: 0, y: 0});
 
     useEffect(() => {
@@ -22,4 +22,4 @@ function CoordenaFlecha() {
     );
 }
 
-export default CoordenaFlecha;
+export default CoordenadaFlecha;
