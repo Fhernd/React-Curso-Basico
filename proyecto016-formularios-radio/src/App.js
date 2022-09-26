@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [estudios, setEstudios] = useState('Primaria');
+
+  function cambiarEstudios(event) {
+    setEstudios(event.target.value);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>
+        <input type="radio" value="Primaria" checked={estudios === 'Primaria'} onChange={cambiarEstudios} />Primaria
+      </p>
+      <p>
+        <input type="radio" value="Secundaria" checked={estudios === 'Secundaria'} onChange={cambiarEstudios} />Secundaria
+      </p>
+      <p>
+        <input type="radio" value="Universitaria" checked={estudios === 'Universitaria'} onChange={cambiarEstudios} />Universitaria
+      </p>
+      <p>
+        Nivel de estudios: {estudios}
+      </p>
     </div>
   );
 }
