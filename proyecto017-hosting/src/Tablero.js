@@ -5,3 +5,5 @@ function Tablero() {
         </div>
     );
 }
+
+export default Tablero;
