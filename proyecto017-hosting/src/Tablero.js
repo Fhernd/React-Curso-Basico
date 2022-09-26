@@ -1,3 +1,5 @@
+
+
 function Tablero() {
     return (
         <div>
