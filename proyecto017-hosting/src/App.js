@@ -1,3 +1,5 @@
+import Tablero from './Tablero';
+
 import logo from './logo.svg';
 import './App.css';
 
