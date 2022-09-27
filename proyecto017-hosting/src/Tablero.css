@@ -1,0 +1,5 @@
+.tablero {
+    display: grid;
+    grid-template-rows: repeat(8, 60px);
+    grid-template-columns: repeat(8, 60px);
+}
