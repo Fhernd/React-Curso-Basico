@@ -51,7 +51,24 @@ function Tablero() {
 
             setTablero(nuevoTablero);
         }
-    });
+
+        const casillas = document.querySelectorAll('.casilla');
+        for (const c of casillas) {
+            c.addEventListener('dragstart', drag);
+            c.addEventListener('dragover', permitirDrop);
+            c.addEventListener('drop', drop);
+        }
+
+        return () => {
+            const casillas = document.querySelectorAll('.casilla');
+
+            for (const c of casillas) {
+                c.removeEventListener('dragstart', drag);
+                c.removeEventListener('dragover', permitirDrop);
+                c.removeEventListener('drop', drop);
+            }
+        }
+    }, [tablero]);
 
     return (
         <div>
