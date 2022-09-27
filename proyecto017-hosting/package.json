@@ -1,5 +1,6 @@
 {
   "name": "proyecto017-hosting",
+  "homepage": "https://www.tusasesoriasprogramacion.com/react/pro017-ajedrez",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
