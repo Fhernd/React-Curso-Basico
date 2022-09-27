@@ -24,6 +24,33 @@ function Tablero() {
             event.dataTransfer.setData('columna', event.target.attributes.columna.value);
             event.dataTransfer.setData('valor', event.target.attributes.valor.value);
         }
+
+        function permitirDrop(event) {
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            const fila = parseInt(event.dataTransfer.getData('fila'));
+            const columna = parseInt(event.dataTransfer.getData('columna'));
+            const valor = parseInt(event.dataTransfer.getData('valor'));
+
+            let nuevoTablero = [...tablero];
+
+            for (let f = 0; f < 8; ++f) {
+                for (let c = 0; c < 8; ++c) {
+                    if(parseInt(event.target.attributes.fila.value) === f && parseInt(pevent.target.attributes.columna.value) === c) {
+                        nuevoTablero[f][c] = valor;
+
+                        if (f !== fila || c !== columna) {
+                            nuevoTablero[fila][columna] = '';
+                        }
+                    }
+                }
+            }
+
+            setTablero(nuevoTablero);
+        }
     });
 
     return (
