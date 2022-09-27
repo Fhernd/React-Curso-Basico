@@ -18,7 +18,7 @@ function Tablero() {
         ]
     );
 
-    useState(() => {
+    useEffect(() => {
         function drag(event) {
             event.dataTransfer.setData('fila', event.target.attributes.fila.value);
             event.dataTransfer.setData('columna', event.target.attributes.columna.value);
@@ -33,7 +33,7 @@ function Tablero() {
             event.preventDefault();
             const fila = parseInt(event.dataTransfer.getData('fila'));
             const columna = parseInt(event.dataTransfer.getData('columna'));
-            const valor = parseInt(event.dataTransfer.getData('valor'));
+            const valor = event.dataTransfer.getData('valor');
 
             let nuevoTablero = [...tablero];
 
