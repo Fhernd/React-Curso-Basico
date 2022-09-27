@@ -39,7 +39,7 @@ function Tablero() {
 
             for (let f = 0; f < 8; ++f) {
                 for (let c = 0; c < 8; ++c) {
-                    if (parseInt(event.target.attributes.fila.value) === f && parseInt(pevent.target.attributes.columna.value) === c) {
+                    if (parseInt(event.target.attributes.fila.value) === f && parseInt(event.target.attributes.columna.value) === c) {
                         nuevoTablero[f][c] = valor;
 
                         if (f !== fila || c !== columna) {
