@@ -12,6 +12,12 @@ export default function App() {
     }
   }
 
+  function banderaAnterior() {
+    if (banderaSeleccionada > 0) {
+      setBanderaSeleccionada(banderaSeleccionada - 1);
+    }
+  }
+
   return (
     <div className="App">
       
