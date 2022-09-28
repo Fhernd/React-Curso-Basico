@@ -11,6 +11,15 @@ import uruguay from './imagenes/uruguay.png';
 import venezuela from './imagenes/venezuela.png';
 
 function App() {
+  const banderas = [argentina, brasil, bolivia, chile, colombia, peru, uruguay, venezuela];
+  const [numeroBandera, setNumeroBandera] = useState(4);
+
+  function banderaSiguiente() {
+    if (numeroBandera < banderas.length - 1) {
+      setNumeroBandera(numeroBandera + 1);
+    }
+  }
+
   return (
     <div className="App">
       <header className="App-header">
