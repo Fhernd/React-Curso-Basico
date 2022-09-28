@@ -6,6 +6,11 @@ export default function App() {
 
   const [banderaSeleccionada, setBanderaSeleccionada] = React.useState(4);
 
+  function banderaSiguiente() {
+    if (banderaSeleccionada < banderasPaises.length - 1) {
+      setBanderaSeleccionada(banderaSeleccionada + 1);
+    }
+  }
 
   return (
     <div className="App">
