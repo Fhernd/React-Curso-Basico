@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 
 export default function App() {
-  const banderasPaises = ['argentina.png', 'bolivia.png', 'brasil.png', 'chile.png', 'colombia.png', 'peru', 'uruguay', 'venezuela'];
+  const banderasPaises = ['argentina.png', 'bolivia.png', 'brasil.png', 'chile.png', 'colombia.png', 'peru.png', 'uruguay.png', 'venezuela.png'];
 
   const [banderaSeleccionada, setBanderaSeleccionada] = React.useState(4);
 
