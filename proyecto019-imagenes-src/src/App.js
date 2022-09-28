@@ -1,5 +1,14 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+
+import argentina from './imagenes/argentina.png';
+import bolivia from './imagenes/bolivia.png';
+import brasil from './imagenes/brasil.png';
+import chile from './imagenes/chile.png';
+import colombia from './imagenes/colombia.png';
+import peru from './imagenes/peru.png';
+import uruguay from './imagenes/uruguay.png';
+import venezuela from './imagenes/venezuela.png';
 
 function App() {
   return (
