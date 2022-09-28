@@ -20,6 +20,12 @@ function App() {
     }
   }
 
+  function banderaAnterior() {
+    if (numeroBandera > 0) {
+      setNumeroBandera(numeroBandera - 1);
+    }
+  }
+
   return (
     <div className="App">
       <header className="App-header">
