@@ -29,6 +29,13 @@ function App() {
           ))}
         </select>
       </div>
+      <div>
+        <select value={articulo.codigo} onChange={cambiarArticulo}>
+            {articulosRubro.map(e => (
+              <option key={e.codigo} value={e.codigo}>{e.nombre}</option>
+            ))}
+        </select>
+      </div>
     </div>
   );
 }
