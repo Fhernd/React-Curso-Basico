@@ -11,7 +11,7 @@ function App() {
 
   function cambiarRubro(event) {
     setRubro(rubros.find(e => e.codigo === Number.parseInt(event.target.value)));
-    const articulosRubro = articulos.filter(e => e.codigoRubro === rubro.codigo);
+    const articulosRubro = articulos.filter(e => e.codigoRubro === parseInt(event.target.value));
     setArticulosRubro(articulosRubro);
     setArticulo(articulosRubro[0]);
   }
@@ -35,6 +35,13 @@ function App() {
               <option key={e.codigo} value={e.codigo}>{e.nombre}</option>
             ))}
         </select>
+      </div>
+      <div>
+        <ul>
+          <li>Rubro: <strong>{rubro.nombre}</strong></li>
+          <li>Artículo: <strong>{articulo.nombre}</strong></li>
+          <li>Precio: <strong>${articulo.precio}</strong></li>
+        </ul>
       </div>
     </div>
   );
