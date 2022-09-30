@@ -22,7 +22,13 @@ function App() {
 
   return (
     <div className="formulario">
-      
+      <div>
+        <select value={rubro.codigo} onChange={cambiarRubro}>
+          {rubros.map(e => (
+            <option key={e.codigo} value={e.codigo}>{e.nombre}</option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 }
