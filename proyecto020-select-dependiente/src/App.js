@@ -9,6 +9,13 @@ function App() {
   const [articulosRubro, setArticulosRubro] = useState(articulos.filter(e => e.codigoRubro === rubro.codigo));
   const [articulo, setArticulo] = useState(articulosRubro[0]);
 
+  function cambiarRubro(event) {
+    setRubro(rubros.find(e => e.codigo === Number.parseInt(event.target.value)));
+    const articulosRubro = articulos.filter(e => e.codigoRubro === rubro.codigo);
+    setArticulosRubro(articulosRubro);
+    setArticulo(articulosRubro[0]);
+  }
+
   return (
     <div className="App">
       
