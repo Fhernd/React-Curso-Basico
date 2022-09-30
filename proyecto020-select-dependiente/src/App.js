@@ -21,7 +21,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="formulario">
       
     </div>
   );
