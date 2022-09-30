@@ -16,6 +16,10 @@ function App() {
     setArticulo(articulosRubro[0]);
   }
 
+  function cambiarArticulo(event) {
+    setArticulo(articulosRubro.find(e => e.codigo === parseInt(event.target.value)));
+  }
+
   return (
     <div className="App">
       
