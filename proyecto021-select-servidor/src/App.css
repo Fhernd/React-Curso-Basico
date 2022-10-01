@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+select {
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
