@@ -1,7 +1,21 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
+
 import './App.css';
 
 function App() {
+  const [rubros, setRubros] = useState([]);
+  const [rubroSeleccionado, setRubroSeleccionado] = useState({});
+
+  useEffect(() => {
+    fetch('https://www.scratchya.com.ar/reactya/proyecto021/recuperarrubros.php')
+    .then((response) => {
+      return response.json()
+    }).then((datos) => {
+      setRubros(datos);
+      setRubroSeleccionado(datos[0])
+    })
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
