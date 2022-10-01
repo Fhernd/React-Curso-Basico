@@ -16,6 +16,22 @@ function App() {
     })
   }, []);
 
+  const [articulosRubro, setArticulosRubro] = useState([]);
+  const [articuloSeleccionado, setArticuloSeleccionado] = useState([]);
+
+  useEffect(() => {
+    if (rubroSeleccionado.codigo) {
+      fetch('https://www.scratchya.com.ar/reactya/proyecto021/recuperararticulos.php?rubro=' + rubroSeleccionado.codigo)
+      .then((response) => {
+        return response.json()
+      })
+      .then((datos) => {
+        setArticulosRubro(datos);
+        setArticuloSeleccionado(datos[0]);
+      });
+    }
+  }, [rubroSeleccionado]);
+
   return (
     <div className="App">
       <header className="App-header">
