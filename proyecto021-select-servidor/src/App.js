@@ -57,6 +57,13 @@ function App() {
             ))}
         </select>
       </div>
+      <div>
+        <ul>
+          <li>Rubro: <strong>{rubroSeleccionado.nombre}</strong></li>
+          <li>Artículo: <strong>{articuloSeleccionado.nombre}</strong></li>
+          <li>Precio: <strong>${articuloSeleccionado.precio}</strong></li>
+        </ul>
+      </div>
     </div>
   );
 }
