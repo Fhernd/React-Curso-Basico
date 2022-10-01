@@ -37,6 +37,10 @@ function App() {
     setRubroSeleccionado(rubroSeleccionado);
   }
 
+  function cambiarArticulo(event) {
+    setArticuloSeleccionado(articulosRubro.find(e => parseInt(e.codigo) === parseInt(event.target.value)));
+  }
+
   return (
     <div className="App">
       <header className="App-header">
