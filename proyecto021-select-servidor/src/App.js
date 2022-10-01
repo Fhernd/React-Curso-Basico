@@ -42,21 +42,14 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="formulario">
+      <div>
+        <select value={rubroSeleccionado.codigo} onChange={cambiarRubro}>
+          {rubros.map(e => (
+            <option key={e.codigo} value={e.codigo}>{e.nombre}</option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 }
